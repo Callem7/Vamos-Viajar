@@ -9,7 +9,6 @@ let emailsRouter = require('./routes/emails.route');
 let usersRouter = require('./routes/users.route'); //importa post.route
 let Post = require('./models/post.model').Post;
 let auth = require('./controllers/auth');
-let cors = require('cors');
 
 app.set('view engine', 'ejs'); //ejs instalado
 
@@ -34,22 +33,6 @@ app.use('/posts', postsRouter);                         //para a rota necessári
 app.use('/callback-requests', callbackRequestsRouter);
 app.use('/emails', emailsRouter);
 app.use('/users', usersRouter);
-
-app.use(cors({ //Liga cors 
-    source: ['/:path*'],
-    origin: ['*'],
-    methods: ['GET, POST, PUT, DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization', 'x-rar-compressed', 'zip', 'x-gzip', 'cross-site'],
-    Credentials: ['true']
-}));
-
-/*app.get('/products/:id', function (req, res, next) {
-  res.json({msg: 'This is CORS-enabled for all origins!'})
-})
-
-app.listen(80, function () {
-  console.log('CORS-enabled web server listening on port 80')
-})*/
 
 app.get('/landmark', async (req, resp) => {
     let id = req.query.id;
