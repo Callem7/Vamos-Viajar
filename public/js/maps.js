@@ -1,6 +1,6 @@
 var platform = new H.service.Platform({
     'apikey': 'KARMwfuQ7rYmtIUFZNdjhdyVOhaCyaHnwydrT_C04Wc'
-});
+})
 
 var defaultLayers = platform.createDefaultLayers();
 var service = platform.getSearchService();
@@ -16,6 +16,8 @@ service.geocode({
           zoom: 15,
           center: result.items[0] && result.items[0].position
         });
-    map.addObject(new H.map.Marker(result.items[0] && result.items[0].position));
+    if(result.items.length > 0){
+        map.addObject(new H.map.Marker(result.items[0] && result.items[0].position));
+    }    
     var ui = H.ui.UI.createDefault(map, defaultLayers);
   }, alert);
