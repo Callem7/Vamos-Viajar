@@ -16,11 +16,16 @@ Sobre o projeto
 This project requires Vscode installed, must have nodejs file installed in computer 
 
 ## Installing
-1.  In order to install the files you need to download the project in the green button "Code" then click the button "Download Zip".
-2.  
+Clone this repository.
+Install dependencies.
+$ npm install
+Start development server.
+$ node app.js
 
 ## Usage
-A step by step series of examples that tell you how to get a development env running.
+This project was built by using HTML5, CSS3, Bootstrap 4 for the front-end part.
+Node.js/ Express framework for the back-end API and MongoDB for the database were used.
+The database is in the MongoDB Atlas remote cloud
 
 ## Contributing
 Made by Lara Rodrigues.
